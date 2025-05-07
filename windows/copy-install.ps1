@@ -13,7 +13,7 @@ $servername = Get-content -path "c:\servers.txt"
 $destinationfolder = "c:\temp\bladelogic"
 
 # Source files - can be changed to what ever environment is needed for where the source file is located.
-$sourcefile = "\\che-opsfil01.ch.expeso.com\Software\Applications\BladeLogic\AgentInstallScript\ADS-Install\_Install\*"
+$sourcefile = "\\server1\Software\Applications\BladeLogic\AgentInstallScript\ADS-Install\_Install\*"
 
 # This section will install the software
 foreach ($ComputerName in $servername)
@@ -28,7 +28,7 @@ foreach ($ComputerName in $servername)
      
         # Install Blade Logic
         # invoke-command -script {c:\temp\bat.bat} -computer server1
-        psexec \\CHEXTFXCLI004 -u "expeso\nbalcerzak" -p <somepassword> c:\temp\blagentInstall_x64.cmd
+        psexec \\DATASERVER -u "USERNAME" -p "PASSWORD" c:\temp\blagentInstall_x64.cmd
         
         if ($setup.exitcode -eq 0)
             {

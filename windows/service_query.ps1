@@ -5,7 +5,7 @@ $server = Get-Content "C:\serverlist.txt"
 $output = "C:\serverlist-out.txt"
 
 #$Cred will supply appropriate credentials for domain or can be used with remote host local admin
-$cred = Get-Credential corp\nbalcerzak
+$cred = Get-Credential "USERNAME"
 
 #Get Fully Qualified Domain Name of Host Machine
 $myFQDN = $env:computername.$env:userdnsdomain
